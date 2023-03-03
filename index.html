@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- The charset attribute specifies the character encoding used in the document, which is UTF-8 in this case. -->
+    <meta charset="UTF-8">
+
+    <!-- The http-equiv attribute provides an HTTP header for the information/value of the content attribute.
+     This declaration sets the X-UA-Compatible header to IE=edge, which tells Internet Explorer to use the latest version available. -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="index.css">
+    <!-- The viewport meta tag is used to control the layout on mobile browsers. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="index.css">
+    <title>Clock</title>
+</head>
+<body>
+    <div class="container1" id="firstContainer"> <!--This is  the first enclosing container which contains all the clock elements-->
+    <section class="container">
+        <div>
+            <img class="timer" src="clock.png">  <!--This is for displaying clock image-->
+        </div>
+        <div class="time-display">   <!--This is for displaying current time-->
+            <div id="clock"></div>
+        </div>
+        <form class="setAlarm">       <!--This is for setting alarm in hh--mm--ss format -->
+        <label class="alarm-heading"><label><br>
+        <div class="set-alarm-field">
+            <input type="number" name="a_hour" id="a_hour" placeholder="Hr" max="23" min="00">
+            <input type="number" name="a_min" id="a_min" placeholder="Min" max="59" min="00">
+            <input type="number" name="a_sec" id="a_sec" placeholder="Sec" max="59" min="00">
+            <select required name="ampm" id="am-pm">
+                <option value="AM">AM</option>
+                <option value="PM">PM</option>
+            </select>
+        </div>
+            <div class="controls">    <!--This is for the control buttons-->
+                <button type="submit" class="set-alarm">Set Alarm</button>
+                <button type="reset" onclick="clearAlarm()" class="clear-alarm">Stop Alarm</button>
+            </div>
+        </form> 
+    </section>
+    <hr style="margin-top: 20px">
+
+    <section>
+        <div  class="alarm-heading">
+            <h3 > Your Upcoming Alarms </h3>
+        </div>
+        <div>
+            <ul id = "myList">   <!--This is to show the multiple alarms that has been set-->
+                
+            </ul>
+        </div>
+    </section>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
